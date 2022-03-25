@@ -414,7 +414,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     }
 
     protected boolean shouldUseTheme() {
-        return mDisplay == DISPLAY_WORKSPACE || mDisplay == DISPLAY_FOLDER
+        return mDisplay == DISPLAY_WORKSPACE || mDisplay == DISPLAY_FOLDER || mDisplay == DISPLAY_ALL_APPS
                 || mDisplay == DISPLAY_TASKBAR;
     }
 
