@@ -192,7 +192,10 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
         final int id = view.getId();
         if (id == R.id.action_screenshot) {
             mCallbacks.onScreenshot();
-        } else if (id == R.id.action_split) {
+            return; // skip vibration since SystemUI handles it
+        }
+        VibratorWrapper.INSTANCE.get(getContext()).vibrate(VibratorWrapper.EFFECT_CLICK);
+        if (id == R.id.action_split) {
             mCallbacks.onSplit();
         } else if (id == R.id.action_clear_all) {
             mCallbacks.onClearAllTasksRequested();
